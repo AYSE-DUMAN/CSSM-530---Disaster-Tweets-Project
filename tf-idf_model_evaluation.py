@@ -62,7 +62,12 @@ tfidf_models = {
     "Random Forest": RandomForestClassifier(),
     "Gradient Boosting": GradientBoostingClassifier(),
     "SVM": SVC(),
-    "Multinomial Naive Bayes": MultinomialNB()
+    "AdaBoost": AdaBoostClassifier(),
+    "Extra Trees": ExtraTreesClassifier(),
+    "K-Nearest Neighbors": KNeighborsClassifier(),
+    "Decision Tree": DecisionTreeClassifier(),
+    "Bagging Classifier": BaggingClassifier(),
+    "XGBoost": XGBClassifier(use_label_encoder=False, eval_metric='logloss')
 }
 
 # Usage example
