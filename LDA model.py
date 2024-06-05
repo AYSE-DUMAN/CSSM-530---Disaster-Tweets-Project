@@ -5,11 +5,21 @@
 @author: AyseDuman
 """
 
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.decomposition import LatentDirichletAllocation
-
 def lda_topic_modelling(data, text_column, n_topics=10, n_top_words=1, max_features=5000):
-    # TF-IDF
+    """
+    Perform LDA topic modeling and add topic-related features to the dataframe.
+    
+    Args:
+    - data (pd.DataFrame): DataFrame containing the text data.
+    - text_column (str): Name of the column containing text data.
+    - n_topics (int): Number of topics to generate.
+    - n_top_words (int): Number of top words to extract for each topic.
+    - max_features (int): Maximum number of features for the TF-IDF vectorizer.
+    
+    Returns:
+    - pd.DataFrame: DataFrame with added topic-related features.
+    """
+    # TF-IDF Vectorizer
     vectorizer = TfidfVectorizer(max_features=max_features)
     X = vectorizer.fit_transform(data[text_column])
 
@@ -41,4 +51,3 @@ def lda_topic_modelling(data, text_column, n_topics=10, n_top_words=1, max_featu
         data[f'topic_word_{i}'] = data['dominant_topic'].apply(lambda topic: top_words[f'topic_{topic}'][i])
 
     return data
-
