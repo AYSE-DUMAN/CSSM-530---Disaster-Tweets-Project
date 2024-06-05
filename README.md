@@ -36,7 +36,7 @@ This Python script includes a set of functions designed to visualize key aspects
 **text_processing.py**
 This Python script is designed for processing and analyzing text data, specifically tweets, by cleaning text and mapping tweet locations to standardized names. The script first establishes a mapping for common locations to ensure consistency in geographical data, which is crucial for any geospatial analysis. Functions within the script perform several text cleaning tasks such as removing URLs, mentions, hashtags (while keeping the text of the hashtag), and special characters. It also filters out English stopwords to focus on more meaningful words in the text. Additionally, the script identifies and extracts various elements from tweets including hashtags, mentions, links, numeric values, timestamps, and retweets, categorizing each tweet for deeper content analysis. This structured extraction and cleaning allow for a more precise and insightful analysis of the tweet content, making the data ready for further Natural Language Processing (NLP) tasks or data visualization.
 
-**text_features.py **
+**text_features.py**
 The textual_feature_generation function aims to extract and calculate various text-related features from a dataset containing tweet data. These features include the length of each tweet in characters, the ratio of capital letters to total characters, the number of words, the number of stopwords, the number of punctuation marks, the number of hashtags, the number of mentions, and the presence of links. These features provide insights into the linguistic characteristics, complexity, and content of the tweets.
 
 **extract_named_entities.py**
